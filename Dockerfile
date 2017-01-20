@@ -5,6 +5,11 @@ MAINTAINER Dan Padgett <dumbledore3@gmail.com>
 RUN apt-get update
 RUN apt-get install -y libcurl3
 
+RUN cp /usr/share/i18n/charmaps/CP1252.gz /tmp && \
+    cd /tmp && \
+    gzip -d CP1252.gz && \
+    localedef -f /tmp/CP1252 -i /usr/share/i18n/locales/en_US  /usr/lib/locale/en_US.CP1252
+
 RUN useradd -ms /bin/bash demobot
 
 # copy the nice dotfiles that dockerfile/ubuntu gives us:
