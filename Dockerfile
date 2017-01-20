@@ -10,6 +10,11 @@ RUN cp /usr/share/i18n/charmaps/CP1252.gz /tmp && \
     gzip -d CP1252.gz && \
     localedef -f /tmp/CP1252 -i /usr/share/i18n/locales/en_US  /usr/lib/locale/en_US.CP1252
 
+RUN cp /usr/share/i18n/charmaps/UTF-8.gz /tmp && \
+    cd /tmp && \
+    gzip -d UTF-8.gz && \
+    localedef -f /tmp/UTF-8 -i /usr/share/i18n/locales/en_US  /usr/lib/locale/en_US.UTF-8
+
 RUN useradd -ms /bin/bash demobot
 
 # copy the nice dotfiles that dockerfile/ubuntu gives us:
