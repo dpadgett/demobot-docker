@@ -1,5 +1,5 @@
 # Dockerfile to run the JKA demo bot
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Dan Padgett <dumbledore3@gmail.com>
 
 RUN apt-get update
