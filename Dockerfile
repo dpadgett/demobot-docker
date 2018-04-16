@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 MAINTAINER Dan Padgett <dumbledore3@gmail.com>
 
 RUN apt-get update
-RUN apt-get install -y libcurl3
+RUN apt-get install -y locales libcurl3
 
 RUN cp /usr/share/i18n/charmaps/CP1252.gz /tmp && \
     cd /tmp && \
